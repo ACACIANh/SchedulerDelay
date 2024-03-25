@@ -3,6 +3,7 @@ package com.example.schedulerdelay.task
 import jakarta.annotation.PostConstruct
 import jakarta.transaction.Transactional
 import mu.KotlinLogging
+import org.springframework.scheduling.annotation.Async
 import org.springframework.stereotype.Service
 import java.time.LocalDateTime
 import java.time.LocalTime
@@ -27,6 +28,7 @@ class TaskService(
         }
     }
 
+    @Async
     fun doWork() {
 
         val now = LocalDateTime.now()

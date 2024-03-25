@@ -3,6 +3,7 @@ package com.example.schedulerdelay.task
 import jakarta.annotation.PostConstruct
 import jakarta.transaction.Transactional
 import mu.KotlinLogging
+import org.springframework.scheduling.annotation.Async
 import org.springframework.stereotype.Service
 import java.time.LocalDateTime
 import java.time.LocalTime
@@ -27,6 +28,7 @@ class SleepTaskService(
         }
     }
 
+    @Async
     fun doWork() {
 
         val now = LocalDateTime.now()
@@ -43,7 +45,7 @@ class SleepTaskService(
     }
 
     fun sleep() {
-        val sleepTimeSeconds = 10L
+        val sleepTimeSeconds = 13L
         log.info { "sleep task service sleep start - localTime : ${LocalTime.now()}" }
         Thread.sleep(sleepTimeSeconds * 1000)
         log.info { "sleep task service sleep ended - localTime : ${LocalTime.now()}" }

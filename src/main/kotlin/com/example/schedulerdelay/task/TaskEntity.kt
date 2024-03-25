@@ -15,7 +15,7 @@ class TaskEntity(
 ) {
 
     fun addSeconds(times: Long) {
-        date = LocalDateTime.now().plusSeconds(times)
+        date = date?.plusSeconds(times)
     }
 
 
