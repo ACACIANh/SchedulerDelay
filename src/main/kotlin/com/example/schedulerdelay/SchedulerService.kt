@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service
 import java.time.LocalTime
 
 const val EVERY_SECOND = "* * * * * *"
-const val CUSTOM_SECOND = "0/10 * * * * *"
+const val CUSTOM_SECOND = "0/3 * * * * *"
 
 private val log = KotlinLogging.logger { }
 
